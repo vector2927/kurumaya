@@ -1,0 +1,72 @@
+//文字コードはutf-8
+@charset "UTF-8";
+
+@use "../global" as g;
+
+//タイトル
+#{g.$prefix_mod}{
+  &Heading{
+    &01{
+      font-size: 52px;
+      position: relative;
+    }
+    &02{
+      font-size: 22px;
+      text-align: center;
+      position: relative;
+      margin: 0 0 80px 0;
+      font-family: "Hina Mincho";
+      letter-spacing: 0.1em;
+
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("/assets/img/top/icon_headingLine.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 22px;
+        height: 2px;
+        left:49%;
+        margin: 16px 0 0 0;
+      }
+
+      &--leftLine{
+        width: fit-content;
+        margin: 0 0 50px 0;
+        &::after{
+          content: "";
+          display: block;
+          position: absolute;
+          background-image: url("/assets/img/top/icon_headingLine.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 20px;
+          height: 2px;
+          left:0;
+          margin: 20px 0 0 0;
+        }
+
+        &Pc{
+          @include g.media_queries{
+            &::after{
+              left: 45%;
+            }
+          }
+        }
+      }
+    }
+
+    &Img{
+      width: 100%;
+      height: auto;
+      margin: 0 0 20px 0;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+

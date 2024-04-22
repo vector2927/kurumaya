@@ -1,0 +1,50 @@
+//文字コードはutf-8
+@charset "UTF-8";
+
+// 使用変数
+//===================================================================
+
+
+// ブレークポイント
+$bp_pc_min: 768px;
+$bp_pc_lg:1990px;
+$bp_tablet_max: 1200px;
+$bp_tablet_min: 769px;
+$bp_smartphone_max: 768px;
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+$fontface_default: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+
+$font_mincho : 'Hina Mincho';
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+$font_zenKaku : 'Zen Kaku Gothic New', sans-serif;
+
+@font-face {
+  font-family: "‌Bodoni";
+  src: url('/assets/fonts/bodoni-72-oldstyle-book.ttf');
+}
+$font_bodoni : "Bodoni";
+
+
+// テキストカラー
+$base_text_color: var(--black);
+
+
+//コンテンツ幅
+$base_content_width: 1440;
+
+
+//class名の接頭辞
+$prefix_mod: ".mod";
+
+
+//カラー
+:root{
+  --white: #f6f8f5;
+  --black: #1d201f;
+  --gray: #cbcbcb;
+  --light: #787878;
+}

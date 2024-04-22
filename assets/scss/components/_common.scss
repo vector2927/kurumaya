@@ -1,0 +1,173 @@
+//文字コードはutf-8
+@charset "UTF-8";
+
+@use "../global" as g;
+
+/* テキスト
+========================================================*/
+#{g.$prefix_mod} {
+  &Bp {
+    &Pc {
+      @include g.media_queries(pc) {
+        display: flex;
+      }
+
+      @include g.media_queries {
+        display: none;
+      }
+    }
+
+    &Sp {
+      @include g.media_queries(pc) {
+        display: none;
+      }
+
+      @include g.media_queries {
+        display: flex;
+      }
+    }
+  }
+}
+
+
+
+#{g.$prefix_mod} {
+  &Pc {
+    display: flex;
+
+    @include g.media_queries {
+      display: none;
+    }
+  }
+
+  &Sp {
+    display: none;
+
+    @include g.media_queries {
+      display: flex;
+    }
+  }
+}
+
+#{g.$prefix_mod} {
+  &Section {
+    .img {
+      &--right {
+        display: block;
+        position: relative;
+        width: 90.278vw;
+        margin: 0 0 0 auto;
+
+        @include g.media_queries(pcLg) {
+          width: 81.206vw;
+        }
+
+        @include g.media_queries(tablet) {
+          margin: 0 0 0 40px;
+        }
+
+        height: 350px;
+        overflow: hidden;
+
+        @include g.media_queries {
+          height: 240px;
+          margin: 0 0 0 40px;
+          overflow: hidden;
+        }
+
+        img {
+          position: absolute;
+          width: 100%;
+
+          @include g.media_queries {
+            width: auto;
+            object-fit: cover;
+            object-position: 0%;
+          }
+
+          Right: -1.667vw;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.content2Col {
+  &__text {
+    @include g.media_queries(tablet) {
+      padding: 30px 35px 0 0px;
+    }
+
+    padding: 30px 35px 0 80px;
+
+    &--ingredients {
+      padding: 42px 0px 0 0px;
+
+      .modHeadingImg {
+        margin: 0 0 15px 0;
+
+        img {
+          width: 67%;
+        }
+      }
+
+      .content2Col__text__content {
+        margin: 0 0 13px 0;
+      }
+
+    }
+
+    h2 {
+      display: block;
+      position: relative;
+      font-size: 20px;
+      padding: 0 0 40px 0;
+      margin: 0 0 45px 0;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+        width: 20px;
+        height: 2px;
+        background-color: black;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &__content {
+      display: block;
+      font-size: 16px;
+      line-height: 2em;
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+
+@keyframes arrowRight {
+  0% {
+    transform: translateX(5px);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  60% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+
+.hidden {
+  display: none;
+}

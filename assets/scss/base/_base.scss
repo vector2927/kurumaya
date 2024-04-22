@@ -1,0 +1,38 @@
+//文字コードはutf-8
+@charset "UTF-8";
+
+@use "../global" as g;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: auto;
+}
+
+body {
+  font-family: g.$fontface_default;
+  color: var(--black);
+  @include g.fontsize(16);
+  overflow-x: hidden;
+  background-color: #f6f8f5;
+
+  @include g.media_queries {
+    @include g.fontsize(14);
+  }
+}
+
+a {
+  @include g.media_queries(pc) {
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    color: var(--black);
+  }
+}
+
+@font-face {
+  font-family: "Hina Mincho";
+  src: url();
+}
